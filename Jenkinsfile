@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("verify tooling") {
       steps {
-        bat '''
+        sh '''
           docker version
           docker info
           docker compose version 
@@ -13,18 +13,18 @@ pipeline {
     }
     stage('Prune Docker data') {
       steps {
-        bat 'docker system prune -a --volumes -f'
+        sh 'docker system prune -a --volumes -f'
       }
     }
     stage('Start container') {
       steps {
-        bat 'docker compose up -d --no-color --wait'
-        bat 'docker compose ps'
+        sh 'docker compose up -d --no-color --wait'
+        sh 'docker compose ps'
       }
     }
     stage('Run tests against the container') {
       steps {
-        bat 'curl http://localhost:9090'
+        sh 'curl http://localhost:9090'
       }
     }
   }
