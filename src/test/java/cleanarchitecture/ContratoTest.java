@@ -7,9 +7,9 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.project.cleanarchitecture.Candidato;
-import com.project.cleanarchitecture.Contrato;
-import com.project.cleanarchitecture.OpcaoContrato;
+import com.project.cleanarchitecture.model.Candidato;
+import com.project.cleanarchitecture.model.Contrato;
+import com.project.cleanarchitecture.model.OpcaoContrato;
 
 public class ContratoTest {
 	Candidato candidato;

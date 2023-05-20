@@ -1,4 +1,4 @@
-package com.project.cleanarchitecture;
+package com.project.cleanarchitecture.model;
 
 public class Contrato {
 	private Candidato candidato;
