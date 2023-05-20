@@ -80,7 +80,7 @@
 				</executions>
 				<configuration>
 					<excludes>
-						<exclude>com.project.cleanarchitecture/*.class</exclude>
+						<exclude>com.project.cleanarchitecture/*.java</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
