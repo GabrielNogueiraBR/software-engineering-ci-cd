@@ -25,8 +25,9 @@ pipeline {
     stage('Run tests against the container') {
       steps {
         script {
-          def containerId = sh(returnStdout: true, script: 'docker compose ps -q').trim()
-          sh "docker exec -it '${containerId}' curl http://localhost:9090"
+          def containerIds = sh(returnStdout: true, script: 'docker compose ps -q').trim().split('\n')
+          def desiredContainerId = containerIds[0] 
+          sh "docker exec -it '${desiredContainerId}' curl http://localhost:9090"
         }
       }
     }
