@@ -22,7 +22,7 @@ pipeline {
         script {
           def containerIds = sh(returnStdout: true, script: 'docker compose ps -q').trim().split('\n')
           def desiredContainerId = containerIds[0] 
-          sh "docker exec -it '${desiredContainerId}' curl http://localhost:9090"
+          sh "docker exec '${desiredContainerId}' curl http://localhost:9090"
         }
       }
     }
