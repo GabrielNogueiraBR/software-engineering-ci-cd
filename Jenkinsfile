@@ -17,6 +17,11 @@ pipeline {
         sh 'docker compose ps'
       }
     }
+    stage('Wait for container') {
+      steps {
+        sh 'sleep 30'
+      }
+    }
     stage('Run tests against the container') {
       steps {
         script {
