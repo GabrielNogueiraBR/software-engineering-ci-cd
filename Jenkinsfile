@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Wait for container') {
       steps {
-        sh 'sleep 30'
+        sh 'sleep 15'
       }
     }
     stage('Run tests against the container') {
