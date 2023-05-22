@@ -21,7 +21,7 @@ pipeline {
       steps {
         script {
           def containerId = sh(returnStdout: true, script: 'docker compose ps -q').trim()
-          def command = "docker exec -t '${containerId}' curl http://localhost:9090"
+          def command = "docker exec -it '${containerId}' curl http://localhost:9090"
           sh command
         }
       }
