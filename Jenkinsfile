@@ -11,6 +11,11 @@ pipeline {
           '''
       }
     }
+    stage('Prune Docker data') {
+      steps {
+        bat 'docker system prune -a'
+      }
+    }
     stage('Start container') {
       steps {
         sh 'docker compose up -d --no-color --wait'
